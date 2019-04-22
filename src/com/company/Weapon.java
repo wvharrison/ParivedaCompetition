@@ -1,10 +1,14 @@
 package com.company;
 
+/*
+ * 2019 Wyatt Harrison
+ */
+
 public class Weapon {
-    String name;
-    int attack;
-    int defense;
-    int accuracy;
+    private String name;
+    private int attack;
+    private int defense;
+    private int accuracy;
 
     public Weapon(String n, int att, int d, int acc) {
         name = n;

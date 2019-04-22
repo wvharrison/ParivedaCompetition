@@ -1,10 +1,14 @@
 package com.company;
 
+/*
+ * 2019 Wyatt Harrison
+ */
+
 public class Enemy {
-    String name;
-    int attack;
-    int defense;
-    int hp;
+    private String name;
+    private int attack;
+    private int defense;
+    private int hp;
 
     public Enemy(String n, int att, int def, int h) {
         name = n;

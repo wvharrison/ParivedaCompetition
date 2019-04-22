@@ -1,5 +1,9 @@
 package com.company;
 
+/*
+ * 2019 Wyatt Harrison
+ */
+
 import java.util.Scanner;
 
 public class Main {

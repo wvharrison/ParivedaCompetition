@@ -1,8 +1,12 @@
 package com.company;
 
+/*
+ * 2019 Wyatt Harrison
+ */
+
 public class Armor {
-    String name;
-    int defense;
+    private String name;
+    private int defense;
 
     public Armor(String n, int def) {
         name = n;

@@ -1,15 +1,19 @@
 package com.company;
 
+/*
+ * 2019 Wyatt Harrison
+ */
+
 public class PlayerCharacter {
-    String name;
-    int strength;
-    int dexterity;
-    int intelligence;
-    int health;
-    Armor armor;
-    Weapon weapon;
-    int gold;
-    int potions;
+    private String name;
+    private int strength;
+    private int dexterity;
+    private int intelligence;
+    private int health;
+    private Armor armor;
+    private Weapon weapon;
+    private int gold;
+    private int potions;
 
     public PlayerCharacter(String n, int st, int dx, int iq, int ht) {
         name = n;
