@@ -6,12 +6,17 @@ package com.company;
 
 public class PlayerCharacter {
     private String name;
-    private int strength;
-    private int dexterity;
-    private int intelligence;
-    private int health;
+    private int strength; // Used for attacking and defensive power in battle.
+    private int dexterity; // Used for accuracy, evasion, and run checks.
+    private int intelligence; // Used for critical checks (both offensively and defensively).
+    private int health; // Used for defensive power and base HP calculation.
     private Armor armor;
     private Weapon weapon;
+    /*
+     * Gold was initially going to be a larger part of the game (going to shops and such rather than selecting one
+     * of two equipment pieces after battle), but its functionality was removed in an effort to streamline the
+     * project. It's left here in case I ever decide to come back and add features just for fun.
+     */
     private int gold;
     private int potions;
 

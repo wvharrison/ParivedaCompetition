@@ -7,7 +7,8 @@ package com.company;
 import java.util.Scanner;
 
 public class Battle {
-    // NOTE: A lot of the "magic numbers" in this class's methods are for balance in battles.
+    // A lot of the "magic numbers" in this class are for balance in battles. I tested them until I landed on numbers
+    // that checked the appropriate stats and "felt right."
     private PlayerCharacter player;
     private int playerHP;
     private Enemy enemy;
@@ -21,18 +22,18 @@ public class Battle {
     }
 
     // Returns are following:
-    // 1: Enemy defeats player
+    // 1: Enemy defeats player (or Player runs away)
     // 0: Player defeats Enemy
     public int battleController(Scanner keyboard) {
         boolean charged = false;
         while(enemyHP > 0 && playerHP > 0) {
             int playerTurnResult = playerTurn(keyboard);
-            if(playerTurnResult == 1) return 0;
-            else if(playerTurnResult == -1) return 1;
+            if(playerTurnResult == 1) return 0; // Player defeated enemy
+            else if(playerTurnResult == -1) return 1; // Player ran away
             int enemyTurnResult = enemyTurn(keyboard, charged);
             if(charged) charged = false; // Set charge back to false after the charged attack was used.
-            if(enemyTurnResult == 1) return 1;
-            if(enemyTurnResult == 2) charged = true;
+            if(enemyTurnResult == 1) return 1; // Enemy defeats player
+            if(enemyTurnResult == 2) charged = true; // Enemy charges
         }
         return 0;
     }
@@ -47,7 +48,7 @@ public class Battle {
         System.out.println(enemy.getName() + ": " + enemyHP + "/" + enemy.getHp());
         System.out.println("\t1. Attack");
         System.out.println("\t2. Use Potion (" + player.getPotions() + " left)");
-        System.out.println("\t3. Run Away");
+        System.out.println("\t3. Run Away"); // Running away is primarily for prematurely finishing battles you know you won't win.
         switch (keyboard.next().charAt(0)) {
             case '1':
                 playerAttack();

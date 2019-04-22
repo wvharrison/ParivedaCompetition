@@ -44,6 +44,7 @@ public class Main {
         System.out.println("OLD MAN:\tRunning away will give you the opportunity to try the battle again with renewed vigor.");
         System.out.println("Before you can explain that this is really a lot to take in, the dog reaches you and attacks!");
 
+        // "Magic numbers" in enemy and equipment are for balance reasons, and were arrived at after testing various values.
         Enemy dog = new Enemy("Rabid Dog", 2, 3, 80);
         battler(keyboard, playerCharacter, dog);
 
@@ -119,6 +120,7 @@ public class Main {
         keyboard.nextLine();
     }
 
+    // Character creation system, returns the created character.
     private static PlayerCharacter characterCreator(Scanner keyboard) {
         int allocatedPoints = 0;
 
@@ -172,6 +174,7 @@ public class Main {
         return new PlayerCharacter(name, strength, dexterity, intelligence, health);
     }
 
+    // Handles new equipment after each battle. One armor option and one weapon option after each battle.
     public static void newEquipChooser(Scanner keyboard, PlayerCharacter playerCharacter, Armor armor, Weapon weapon) {
         playerCharacter.incPotions();
         System.out.println();
@@ -202,6 +205,9 @@ public class Main {
         System.out.println();
     }
 
+    // Easily connects Main class to Battle class. Players are left in a loop until they win.
+    // (Unfortunately, this could potentially lead to grinding for crits if a player allocated stats in such
+    // a way that battles become unreasonably difficult).
     public static void battler(Scanner keyboard, PlayerCharacter playerCharacter, Enemy enemy) {
         System.out.println();
         int result = 1;
