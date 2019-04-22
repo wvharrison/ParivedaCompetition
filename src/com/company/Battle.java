@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Battle {
     // NOTE: A lot of the "magic numbers" in this class's methods are for balance in battles.
-    PlayerCharacter player;
-    int playerHP;
-    Enemy enemy;
-    int enemyHP;
+    private PlayerCharacter player;
+    private int playerHP;
+    private Enemy enemy;
+    private int enemyHP;
 
     public Battle(PlayerCharacter pc, Enemy e) {
         player = pc;
@@ -179,7 +179,7 @@ public class Battle {
     }
 
     private boolean enemyAttackHits() {
-        double evasion = player.getDexterity() / 100;
+        double evasion = (double) player.getDexterity() / 100;
         if(Math.random() < evasion) return false;
         else return true;
     }
